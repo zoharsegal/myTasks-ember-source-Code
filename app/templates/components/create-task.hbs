@@ -1,0 +1,22 @@
+<div class="modalOutDialog">
+</div>
+<div class="modalInDialog">
+  <div class="modelHeader">
+    <div onclick={{action "closeCreateTaskDialog"}} class="modelHeaderCloseDiv">
+      <span class="fa fa-times modelHeaderClose"></span>
+    </div>
+  </div>
+  <div class="modelContent">
+    <form {{action 'createTask' taskName on='submit'}} class="form">
+      <div class="container">
+        <label for="taskName"><b>שם משימה:</b></label>
+         {{input type="text" name=taskName required=true value=taskName}}
+
+        {{input type="hidden" name=_token value='e(csrf_token())'}}
+
+        <button type="submit" class="btnMenu">צור</button>
+      </div>
+
+    </form>
+  </div>
+</div>

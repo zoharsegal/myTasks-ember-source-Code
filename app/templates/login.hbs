@@ -1,0 +1,15 @@
+<form {{action 'submitLoginForm' user on='submit'}} class="form">
+
+  <div class="container">
+    <label for="email"><b>אי מייל:</b></label>
+      {{input type="email" name=email required=true value=user.email}}
+
+    <label for="psw"><b>סיסמה:</b></label>
+      {{input type="password" name=password required=true value=user.password}}
+
+    {{input type="hidden" name=_token value='e(csrf_token())'}}
+
+    <button type="submit" class="btnMenu">התחבר</button>
+  </div>
+
+</form>

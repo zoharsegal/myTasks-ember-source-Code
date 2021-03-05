@@ -1,0 +1,6 @@
+<label
+  class="checkbox"
+>
+     {{input type="checkbox" name=userId required=true checked=isShared change=(action 'shareTaskWithUser' taskId userId)}}
+     <span class="taskName">{{userName}}</span>
+</label>

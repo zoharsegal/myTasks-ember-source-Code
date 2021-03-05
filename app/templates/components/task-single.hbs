@@ -1,0 +1,26 @@
+<label
+  class="checkbox {{if isDone "is-done"}}"
+>
+
+     {{input type="checkbox" name=id required=true checked=isDone change=(action 'markDoneOrNot')}}
+     <span class="taskName"><b>{{sum orderNum 1}}</b>.{{taskName}}</span>
+</label>
+
+<div class="actionList">
+  <span
+    onclick={{action "shareTask" isOwner}}
+    class="fa fa-share-alt shareTask {{if isShared "is-shared"}}">
+  </span>
+
+{{#if isOwner}}
+  <span
+    onclick={{action "deleteTask" id }}
+    class="fa fa-times deleteTask">
+  </span>
+{{/if}}
+
+</div>
+
+{{#if isShareDialogShow}}
+  {{task-share taskId=id sharesList=sharesList class="posFixed"}}
+{{/if}}

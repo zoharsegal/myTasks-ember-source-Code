@@ -1,0 +1,19 @@
+<div class="header">
+  <div class="appButtons">
+
+    {{#if isLoggedIn}}
+      <a class="btnMenu" onclick={{action "logout"}}>התנתק</a>
+      {{#link-to "task" class="btnMenu"}}המשימות שלי{{/link-to}}
+    {{else}}
+      {{#link-to "login" class="btnMenu"}}התחבר{{/link-to}}
+      {{#link-to "register" class="btnMenu"}}הרשם{{/link-to}}
+    {{/if}}
+  </div>
+
+  <div class="appTitle">
+    {{#link-to "index" class="appTitleLink"}}
+      משימות
+    {{/link-to}}
+  </div>
+
+</div>

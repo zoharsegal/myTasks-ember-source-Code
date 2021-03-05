@@ -1,0 +1,26 @@
+<div class="modalOutDialog">
+</div>
+<div class="modalInDialog">
+  <div class="modelHeader">
+    <div onclick={{action "closeShareTaskDialog"}} class="modelHeaderCloseDiv">
+      <span class="fa fa-times modelHeaderClose"></span>
+    </div>
+  </div>
+  <div class="modelContent">
+    <div class="tasksShareContainer">
+      <ul class="ulShares">
+          {{#each sharesList as |share|}}
+            <li class="liFixed">
+              {{share-user
+                userId=share.userId
+                userName=share.userName
+                isShared=share.isShared
+                taskId=taskId
+                class="divLi"
+              }}
+            </li>
+          {{/each}}
+        </ul>
+    </div>
+  </div>
+</div>

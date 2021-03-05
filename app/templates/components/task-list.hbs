@@ -1,0 +1,27 @@
+{{#if isCreateDialogShow}}
+  {{create-task}}
+{{/if}}
+
+<div class="subToolBar">
+  <a class="btnMenu btnMargin10" onclick={{action "openCreateTaskDialog"}}><span class="fa fa-plus btnCreateTask"></span></a>
+</div>
+<div class="tasksContainer">
+  <ul class="taskList">
+      {{#each tasks as |task index|}}
+        <li class="liMixed">
+          {{task-single
+            id=task.id
+            isDone=task.isDone
+            isShared=task.isShared
+            isOwner=task.isOwner
+            orderNum=index
+            taskName=task.taskName
+            sharesList=task.shares
+            class="divLi"
+          }}
+        </li>
+      {{/each}}
+    </ul>
+</div>
+
+

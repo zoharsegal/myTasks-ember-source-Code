@@ -1,0 +1,12 @@
+<label
+  for={{id}}
+>
+<Input
+  @name={{id}}
+  @id={{id}}
+  @type="checkbox"
+  @checked={{isShared}}
+  {{on "input" this.markUserShare}}
+/>{{yield}}
+{{isShared}}
+</label>
